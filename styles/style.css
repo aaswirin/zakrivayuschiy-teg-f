@@ -14,3 +14,40 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
+
+/* Заголовок */
+.header {}
+.header__logo  {}
+.header__title {}
+
+/* Тело */
+.main {}
+.main__list-cards {}
+.main__list-cards-item {}
+.main__list-section {}
+.main__list-section-title {}
+.main__list-section-container {}
+.main__list-section-label {}
+.main__list-section-image {}
+.main__list-section-text {}
+.main__list-section-buttons {}
+.card__icon-button {}
+.heart {}
+.contour {}
+.main-body {}
+.core {}
+.sparks {}
+.main__list-section-button {}
+.main__list-section-button-text {}
+
+/* Подвал */
+.footer {}
+.footer__button {}
+.footer__floppy-icon {}
+.footer__title {}
+
+/* Диалог */
+.dialog {}
+.dialog__info {}
+.dialog__text {}
+.dialog__save {}
