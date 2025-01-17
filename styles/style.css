@@ -13,25 +13,102 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--global-font), sans-serif;
+  font-variation-settings: 'wght' 400, 'wght' 785;
+  overflow: auto;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Заголовок */
-.header {}
-.header__logo  {}
-.header__title {}
+.header {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  font-family: var(--attention-font), fantasy;
+  line-height: normal;
+  text-transform: uppercase;
+  border: 2px solid var(--text-color);
+  max-inline-size: 100vw;
+  margin-block-start: 100px;
+  margin-block-end: 90px;
+}
+
+.header__logo  {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-start: 120px;
+  padding-block-end: 20px;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  padding-block-end: 120px;
+}
 
 /* Тело */
 .main {}
-.main__list-cards {}
+
+.main__list-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .main__list-cards-item {}
-.main__list-section {}
-.main__list-section-title {}
-.main__list-section-container {}
-.main__list-section-label {}
-.main__list-section-image {}
+
+.main__list-section {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  border: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.main__list-section-title {
+  line-height: normal;
+  font-variation-settings: 'wght' 700;
+  font-size: 18px;
+  padding: 4px 10px 6px 10px;
+  border-block-end: 2px solid var(--text-color);
+}
+
+.main__list-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main__list-section-label {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 3;
+  opacity: 0.5;
+  font-family: var(--attention-font), sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px var(--background-color);
+  inset-inline-end: 13px;
+  inset-block-start: 24px;
+  mix-blend-mode: hard-light;
+  color: var(--text-color);
+}
+
+.main__list-section-image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+}
+
 .main__list-section-text {}
 .main__list-section-buttons {}
-.card__icon-button {}
 .heart {}
 .contour {}
 .main-body {}
@@ -39,6 +116,13 @@
 .sparks {}
 .main__list-section-button {}
 .main__list-section-button-text {}
+
+/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом: */
+.like-icon {}
+.card__like-button {}
+.card__icon-button {}
+.is-liked {}
+.button__text {}
 
 /* Подвал */
 .footer {}
@@ -51,3 +135,30 @@
 .dialog__info {}
 .dialog__text {}
 .dialog__save {}
+
+/* Глобально */
+.global__module {
+  margin-inline: auto;
+  max-inline-size: 100vw;
+  border: 2px solid var(--text-color);
+  background: var(--background-color);
+  min-width: 350px;
+}
+
+/* На большом экране */
+@media screen and (width > 375px) {
+  /* Заголовок */
+  .header__logo {
+    padding-block-start: 128px;
+  }
+
+  .header__title {
+    padding-block-end: 130px;
+  }
+
+  /* Глобально */
+  .global__module {
+    max-inline-size: 696px;
+  }
+
+}
