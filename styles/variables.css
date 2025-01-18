@@ -1,8 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --global-font: 'Inter', sans-serif;               /* Шрифт для всей страницы */
-  --background-color: #fff;                         /* Цвет фона для всей страницы */
-  --text-color: #000;                               /* Цвет текста для всей страницы */
+  --background-color: white;                        /* Цвет фона для всей страницы */
+  --text-color: black;                              /* Цвет текста для всей страницы */
   --background-image:                               /* Фон для всей страницы  */
     repeating-linear-gradient(
       to right,
@@ -26,5 +26,6 @@
       #1a1a1a
     );
   --attention-font: "PressStart2P", fantasy;     /* Шрифт для заголовка, кнопок и диалога */
-
+  --label-shadow-color: white;                   /* Цвет для обводки текста */
+  --like-heart-color: red;                       /* Цвет для сердца */
 }
