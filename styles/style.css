@@ -134,7 +134,7 @@
 .main__list-section-button {}
 .main__list-section-button-text {}
 
-/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом: */
+/* !!! Это обязательно !!! */
 /*
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
@@ -142,12 +142,38 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
  */
-
+ /* Сердце */
 .like-icon {
   inline-size: 39px;
   block-size: 36px;
   border: none;
   fill: var(--background-color);
+}
+
+.like-icon {
+  fill: var(--background-color);
+  inline-size: 39px;
+  block-size: 36px;
+  border: none;
+}
+
+.like-icon .heart {
+  transform-origin: center center;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 5ms;
+}
+
+.like-icon .contour {
+  fill: var(--text-color);
+  transition: fill 0.1s linear;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+  fill: var(--like-heart-color);
 }
 
 .card__like-button {
@@ -173,16 +199,87 @@
 }
 
 /* Подвал */
-.footer {}
-.footer__button {}
-.footer__floppy-icon {}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 83vw;
+  min-width: 306px;
+  padding: 15px 20px;
+  margin-block-start: 42px;
+  margin-block-end: 100px;
+}
+
+.footer__floppy-icon {
+  inline-size: 28px;
+  block-size: 28px;
+  stroke: var(--background-color);
+  fill: var(--background-color);
+  mix-blend-mode: difference;
+}
 .footer__title {}
 
 /* Диалог */
-.dialog {}
-.dialog__info {}
-.dialog__text {}
-.dialog__save {}
+.dialog {
+  padding: 0;
+  border: 2px solid var(--text-color)
+}
+
+.dialog__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border: 2px solid var(--text-color);
+  padding: 30px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--attention-font), fantasy;
+  font-size: 14px;
+  font-style: normal;
+  max-inline-size: 357px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
+.dialog__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  inline-size: 100%
+}
+
+.dialog__floppy-icon {
+  block-size: 39px;
+  inline-size: 39px;
+}
+
+.dialog__text {
+  font-family: var(--attention-font), fantasy;
+  font-size: 14px;
+  text-transform: inherit;
+  white-space: normal;
+  max-inline-size: 234px;
+}
+
+.dialog__save {
+  width: 100%;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  backdrop-filter: blur(7px);
+}
 
 /* Глобально */
 .global__module {
@@ -196,7 +293,7 @@
 .global__button {
   z-index: 1;
   border: 2px solid var(--text-color);
-  font-family: var(--attention-font), sans-serif;
+  font-family: var(--attention-font), fantasy;
   font-size: 14px;
   line-height: 12px;
   text-transform: inherit;
@@ -231,6 +328,20 @@
 
   .card__like-button {
     width: 8vw;
+  }
+
+  /* Подвал */
+  .footer__button {
+    flex-direction: row;
+    min-width: 335px;
+    width: 23vw;
+    padding: 16px 21px 16px 0;
+  }
+
+  .footer__floppy-icon {
+    inline-size: 21px;
+    block-size: 21px;
+    margin-left: 15px;
   }
 
   /* Глобально */
