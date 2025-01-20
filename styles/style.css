@@ -48,15 +48,11 @@
 }
 
 /* Тело */
-.main {}
-
 .main__list-cards {
   display: flex;
   flex-direction: column;
   gap: 29px;
 }
-
-.main__list-cards-item {}
 
 .main__list-section {
   display: flex;
@@ -107,6 +103,36 @@
   aspect-ratio: 1 / 1;
 }
 
+ /* Фильтры */
+.main__list-section-blur {
+  filter: blur(5px);
+}
+
+.main__list-section-brightness {
+  filter: brightness(120%);
+}
+
+.main__list-section-hue {
+  filter: hue-rotate(40deg);
+}
+
+.main__list-section-invert {
+  filter: invert(100%);
+}
+
+.main__list-section-opacity {
+  filter: opacity(50%);
+}
+
+.main__list-section-saturate {
+  filter: saturate(150%);
+}
+
+.main__list-section-sepia {
+  filter: sepia(80%);
+}
+ /* Конец Фильтры */
+
 .main__list-section-text {
   display: flex;
   flex-direction: column;
@@ -126,22 +152,7 @@
   padding: 5px 20px 25px 25px;
 }
 
-.heart {}
-.contour {}
-.main-body {}
-.core {}
-.sparks {}
-.main__list-section-button {}
-.main__list-section-button-text {}
-
 /* !!! Это обязательно !!! */
-/*
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
- */
  /* Сердце */
 .like-icon {
   inline-size: 39px;
@@ -150,30 +161,36 @@
   fill: var(--background-color);
 }
 
-.like-icon {
-  fill: var(--background-color);
-  inline-size: 39px;
-  block-size: 36px;
-  border: none;
-}
-
 .like-icon .heart {
   transform-origin: center center;
 }
 
 .like-icon .core {
   fill: transparent;
-  transition: fill 0.3s 5ms;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon .contour {
   fill: var(--text-color);
-  transition: fill 0.1s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon .sparks {
   opacity: 0;
   fill: var(--like-heart-color);
+}
+
+.like-icon.is-liked {
+  animation: heart 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--like-heart-color);
+  transition: fill 0.3s linear 0.06s;
 }
 
 .card__like-button {
@@ -191,7 +208,31 @@
   cursor: pointer;
 }
 
-.is-liked {}
+.card__icon-button:hover .core {
+  fill: var(--text-color);
+  transition: fill 0.3s 3ms;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--text-color);
+  transition: fill 0.5s 3ms;
+}
+.card__icon-button:active .core,
+.like-icon.is-liked .core {
+  fill: var(--like-heart-color);
+  transition: fill 0.3s 3ms;
+}
+
+.card__icon-button:active .main-body,
+.like-icon.is-liked .main-body {
+  fill: var(--like-heart-color);
+  transition: fill 0.5s 3ms;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
 
 .button__text {
   mix-blend-mode: difference;
@@ -224,7 +265,6 @@
   fill: var(--background-color);
   mix-blend-mode: difference;
 }
-.footer__title {}
 
 /* Диалог */
 .dialog {
@@ -305,6 +345,24 @@
   position: relative;
 }
 
+.global__button::before {
+  content: "";
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: -1;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--text-color);
+  position: absolute;
+}
+
+.global__button:hover::before {
+  width: 100%;
+  transform: scaleX(1);
+}
+
 /* Можем ли? */
 @supports (-webkit-text-stroke: 1px var(--label-shadow-color)) {
   .main__list-section-label {
@@ -348,6 +406,5 @@
   .global__module {
     max-inline-size: 696px;
   }
-
 
 }
