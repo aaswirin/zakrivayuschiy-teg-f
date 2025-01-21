@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--global-font), sans-serif;
-  font-variation-settings: 'wght' 400, 'wght' 785;
+  font-variation-settings: 'wght' var(--font-normal, 400);
   overflow: auto;
   background-color: var(--background-color);
   background-image: var(--background-image);
@@ -36,7 +36,7 @@
   border: 2px solid var(--text-color);
 }
 
-.header__logo  {
+.header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-block-start: 120px;
   padding-block-end: 20px;
@@ -65,7 +65,7 @@
 
 .main__list-section-title {
   line-height: normal;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: 'wght' var(--font-bold, 700);
   font-size: 18px;
   padding: 4px 10px 6px 10px;
   border-block-end: 2px solid var(--text-color);
@@ -105,7 +105,7 @@
 
  /* Фильтры */
 .main__list-section-blur {
-  filter: blur(5px);
+  filter: blur(5px) grayscale(66%);
 }
 
 .main__list-section-brightness {
@@ -113,11 +113,11 @@
 }
 
 .main__list-section-hue {
-  filter: hue-rotate(40deg);
+  filter: hue-rotate(40deg) contrast(50%);
 }
 
 .main__list-section-invert {
-  filter: invert(100%);
+  filter: invert(100%) brightness(90%);
 }
 
 .main__list-section-opacity {
@@ -139,7 +139,7 @@
   gap: 25px;
   padding: 25px;
   font-family: var(--global-font), sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' var(--font-normal, 400);
   font-size: 18px;
   border-block-start: 2px solid var(--text-color);
 }

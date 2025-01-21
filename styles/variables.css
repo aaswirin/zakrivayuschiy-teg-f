@@ -1,6 +1,9 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --global-font: 'Inter', sans-serif;               /* Шрифт для всей страницы */
+  --attention-font: "PressStart2P", fantasy;        /* Шрифт для заголовка, кнопок и диалога */
+  --font-normal: 400;                               /* normal */
+  --font-bold: 700;                                 /* bold */
   --background-color: white;                        /* Цвет фона для всей страницы */
   --text-color: black;                              /* Цвет текста для всей страницы */
   --background-image:                               /* Фон для всей страницы  */
@@ -25,7 +28,6 @@
       #1a1a1a,
       #1a1a1a
     );
-  --attention-font: "PressStart2P", fantasy;     /* Шрифт для заголовка, кнопок и диалога */
-  --label-shadow-color: white;                   /* Цвет для обводки текста */
-  --like-heart-color: red;                       /* Цвет для сердца */
+  --label-shadow-color: white;                      /* Цвет для обводки текста */
+  --like-heart-color: red;                          /* Цвет для сердца */
 }
