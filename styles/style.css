@@ -219,6 +219,7 @@
   fill: var(--text-color);
   transition: fill 0.5s 3ms;
 }
+
 .card__icon-button:active .core,
 .like-icon.is-liked .core {
   fill: var(--like-heart-color);
@@ -379,7 +380,6 @@
     text-stroke: 1px var(--label-shadow-color);
   }
 }
-
 
 /* На большом экране */
 @media screen and (width > 375px) {
