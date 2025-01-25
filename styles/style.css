@@ -37,6 +37,7 @@
 }
 
 .header__logo {
+  text-decoration: none;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-block-start: 120px;
   padding-block-end: 20px;
@@ -48,7 +49,7 @@
 }
 
 /* Тело */
-.main__list-cards {
+.main {
   display: flex;
   flex-direction: column;
   gap: 29px;
@@ -74,22 +75,22 @@
 .main__list-section-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
+  margin-block: 0;
+  margin-inline: 0;
 }
 
 .main__list-section-label {
-  right: 10px;
-  top: 10px;
   z-index: 3;
   opacity: 0.5;
   font-family: var(--attention-font), fantasy;
   font-size: 14px;
   line-height: normal;
   inset-inline-end: 13px;
-  inset-block-start: 24px;
+  inset-block-start: 25px;
   mix-blend-mode: hard-light;
-  text-transform: uppercase;
   text-shadow: 0 0 1px var(--background-color);
   color: var(--text-color);
   position: absolute;
@@ -141,6 +142,7 @@
   font-family: var(--global-font), sans-serif;
   font-variation-settings: 'wght' var(--font-normal, 400);
   font-size: 18px;
+  line-height: 21px;
   border-block-start: 2px solid var(--text-color);
 }
 
@@ -148,8 +150,8 @@
   display: flex;
   justify-content: end;
   align-items: stretch;
-  gap: 5px;
-  padding: 5px 20px 25px 25px;
+  gap: 3px;
+  padding: 1px 26px 25px 20px;
 }
 
 /* !!! Это обязательно !!! */
@@ -240,12 +242,12 @@
 }
 
 /* Подвал */
-.footer {
+.section__save {
   display: flex;
   justify-content: center;
 }
 
-.footer__button {
+.section__save-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,11 +256,11 @@
   width: 83vw;
   min-width: 306px;
   padding: 15px 20px;
-  margin-block-start: 42px;
+  margin-block-start: 10px;
   margin-block-end: 100px;
 }
 
-.footer__floppy-icon {
+.section__save-floppy-icon {
   inline-size: 28px;
   block-size: 28px;
   stroke: var(--background-color);
@@ -268,7 +270,7 @@
 
 /* Диалог */
 .dialog {
-  padding: 0;
+  padding: 0 18px;
   border: 2px solid var(--text-color)
 }
 
@@ -277,14 +279,13 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  border: 2px solid var(--text-color);
-  padding: 30px;
+  padding: 30px 20px;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--attention-font), fantasy;
   font-size: 14px;
   font-style: normal;
-  max-inline-size: 357px;
+  max-inline-size: 341px;
   font-weight: 400;
   text-transform: uppercase;
   line-height: 150%;
@@ -308,7 +309,7 @@
   font-size: 14px;
   text-transform: inherit;
   white-space: normal;
-  max-inline-size: 234px;
+  max-inline-size: 198px;
 }
 
 .dialog__save {
@@ -326,6 +327,7 @@
   margin-inline: auto;
   max-inline-size: 100vw;
   border: 2px solid var(--text-color);
+  box-sizing: content-box;
   min-width: 350px;
   background: var(--background-color);
 }
@@ -363,6 +365,12 @@
   transform: scaleX(1);
 }
 
+.global__button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--text-color);
+}
+
+
 /* Можем ли? */
 @supports (-webkit-text-stroke: 1px var(--label-shadow-color)) {
   .main__list-section-label {
@@ -378,10 +386,17 @@
   /* Заголовок */
   .header__logo {
     padding-block-start: 128px;
+    padding-block-end: 22px;
+    letter-spacing: 2px;
   }
 
   .header__title {
     padding-block-end: 130px;
+    letter-spacing: 1px;
+  }
+
+  .main__list-section-label {
+    inset-inline-end: 26px;
   }
 
   .card__like-button {
@@ -389,22 +404,31 @@
   }
 
   /* Подвал */
-  .footer__button {
+  .section__save-button {
     flex-direction: row;
     min-width: 335px;
     width: 23vw;
-    padding: 16px 21px 16px 0;
+    padding: 15px 18px 15px 0;
   }
 
-  .footer__floppy-icon {
+  .section__save-floppy-icon {
     inline-size: 21px;
     block-size: 21px;
     margin-left: 15px;
+  }
+
+  /* Диалог */
+  .dialog__content {
+    padding: 29px 11px;
+    max-inline-size: 357px;
+  }
+
+  .dialog__text {
+    max-inline-size: 234px;
   }
 
   /* Глобально */
   .global__module {
     max-inline-size: 696px;
   }
-
 }
