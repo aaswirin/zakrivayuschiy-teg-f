@@ -68,7 +68,7 @@
   line-height: normal;
   font-variation-settings: 'wght' var(--font-bold, 700);
   font-size: 18px;
-  padding: 4px 10px 6px 10px;
+  padding: 5px 10px 5px 10px;
   border-block-end: 2px solid var(--text-color);
 }
 
@@ -387,12 +387,12 @@
   .header__logo {
     padding-block-start: 128px;
     padding-block-end: 22px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
   }
 
   .header__title {
     padding-block-end: 130px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 
   .main__list-section-label {
